@@ -1,0 +1,26 @@
+<%- include('header'); -%>
+
+    <div class="box" id="heading">
+        <h1><%=listTitle %>'s List</h1>
+    </div>
+
+    <div class="box">
+
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="Add New Item" autocomplete="off">
+            <button type="submit" name="listName" value="<%=listTitle%>">+</button>
+        </form>
+
+        <form action="/delete" method="POST">
+            <%  newListItems.reverse().forEach((x)=>{  %>
+            <div class="item">
+                <input type="checkbox" name="itemID" value="<%=x._id%>" onchange="this.form.submit()">
+                <p><%= x.name %></p>
+            </div>
+            <%   }) %>
+            <input type="hidden" name="deleteListName" value="<%=listTitle%>"></input>
+        </form>
+
+    </div>
+
+<%- include('footer'); -%>
