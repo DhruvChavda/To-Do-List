@@ -14,9 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // connect mongoose
-// const DB_USER = "admin-DMC";
-// const PASSWORD = encodeURIComponent("Dhruvatlas");
-console.log(PASSWORD);
+
 mongoose.connect(
     process.env.DB_CONN
 );
