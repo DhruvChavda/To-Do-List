@@ -1,5 +1,5 @@
 // Use dotenv to read .env vars into Node
-require("dotenv").config();
+require('dotenv').config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -14,8 +14,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // connect mongoose
+// const DB_USER = "admin-DMC";
+// const PASSWORD = encodeURIComponent("Dhruvatlas");
 console.log(PASSWORD);
-mongoose.connect(process.env.DB_CONN);
+mongoose.connect(
+    process.env.DB_CONN
+);
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
