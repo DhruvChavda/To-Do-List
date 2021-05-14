@@ -11,9 +11,11 @@ It is Backed by MongoDB Atlas so your list is Stored safely in the cloud and you
 Just add your name behind the link and It'll generate a brand new list for you.
 
 *   **Mobile View**
+
     ![Mobile](./READMEAssets/Mobile.jpeg)
 
 *   **Desktop View**
+
     ![Desktop](./READMEAssets/Desktop.jpeg)
 
 ## How to Contribute
