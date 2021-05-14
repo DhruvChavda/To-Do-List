@@ -16,8 +16,9 @@ app.use(express.static("public"));
 // connect mongoose
 const DB_USER = "admin-DMC";
 const PASSWORD = encodeURIComponent("Dhruvatlas");
+console.log(PASSWORD);
 mongoose.connect(
-    `mongodb+srv://${DB_USER}:${PASSWORD}@cluster0.pztyp.mongodb.net/todolistDB?retryWrites=true&w=majority`
+    process.env.DB_CONN
 );
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
