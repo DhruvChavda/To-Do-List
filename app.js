@@ -1,5 +1,5 @@
 // Use dotenv to read .env vars into Node
-require("dotenv").config();
+require('dotenv').config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -13,7 +13,12 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.DB_CONN);
+// connect mongoose
+const DB_USER = "admin-DMC";
+const PASSWORD = encodeURIComponent("Dhruvatlas");
+mongoose.connect(
+    `mongodb+srv://${DB_USER}:${PASSWORD}@cluster0.pztyp.mongodb.net/todolistDB?retryWrites=true&w=majority`
+);
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
